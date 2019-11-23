@@ -1,17 +1,22 @@
 package comcom.microservices.learning.conversion.conversionservice;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.math.BigDecimal;
 
 /**
  * Created by nitin on Saturday, November/23/2019 at 10:32 AM
  */
 
-
+@Entity(name="conversion_table")
 public class ConversionFactor {
 
-
+    @Id
     private Long id;
+    @Column(name="data_from")
     private String from;
+    @Column(name="data_to")
     private String to;
     private BigDecimal conversionMultiple;
     //Port number to keep track of the server returning the value
